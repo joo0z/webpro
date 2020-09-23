@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<style>
+	table#t1 {
+		border: 3px solid red;
+		border-collapse : collapse; 
+		margin : 10px; 
+	}
+	#t1 th{
+		height : 50px; 
+	}
+	#t1 td {
+		width : 200px;
+		height : 40px;
+		text-align: center;
+	}
+	#t1 #tr1{
+		background: pink;
+	}
+	table#t2 {
+		border: 3px dotted lightgray;
+		border-collapse : collapse; 
+		margin : 20px; 
+	}
+	#t2 th{
+		height : 70px; 
+		color : lime;  
+	}
+	#t2 td {
+		width : 200px;
+		height : 40px;
+		text-align: center;
+	}
+	#t2 #tr2{
+		background: orange;
+	}
+	table#t3 {
+		border: 3px solid red;
+		border-collapse : inherit; 
+		margin : 30px; 
+	}
+	#t3 th{
+		height : 50px; 
+		font-size: 1.5em;
+	}
+	#t3 td {
+		width : 200px;
+		height : 40px;
+		text-align: center;
+	}
+	#tr3{
+		/*html 색상표로 기술 가능*/
+		background: rgba(225,0,0, 0.2); 
+		
+		color : #6E6ED7;
+	}
+	
+	
+</style>
+</head>
+<body>
+<pre>
+작성팁
+ table : 표 형태의 데이터를 표시
+  tr(row) : 행, 줄
+  td(data) : 칸, 열
+  th(header) : td대신 제목 표시 > 자동 굵은줄
+  
+ 스타일
+  table : border, border-collapse
+  td : width, height, text-align
+  tr : background
+  th : width, height
+  width, height => td,th 어디서 지정하던 상관 X
+
+</pre>
+<table id="t1" border="1">
+	<tr id="tr1">
+		<th>이름</th>
+		<th>주소</th>
+		<th>전화번호</th>
+	</tr>
+	<tr>
+		<td>이명호</td>
+		<td>영동</td>
+		<td>010-1234-1234</td>
+	</tr>
+	<tr>
+		<td>김윤환</td>
+		<td>궁동</td>
+		<td>010-2345-1234</td>
+	</tr>
+	<tr>
+		<td>이미현</td>
+		<td>탄방동</td>
+		<td>010-4444-4444</td>
+	</tr>
+
+</table>
+
+<table id="t2" border="1">
+	<tr id="tr2">
+		<th>이름</th>
+		<th>주소</th>
+		<th>전화번호</th>
+	</tr>
+	<tr>
+		<td>이명호</td>
+		<td>영동</td>
+		<td>010-1234-1234</td>
+	</tr>
+	<tr>
+		<td>김윤환</td>
+		<td>궁동</td>
+		<td>010-2345-1234</td>
+	</tr>
+	<tr>
+		<td>이미현</td>
+		<td>탄방동</td>
+		<td>010-4444-4444</td>
+	</tr>
+
+</table>
+
+<table id="t3" border="1">
+	<tr id="tr3">
+		<th>이름</th>
+		<th>주소</th>
+		<th>전화번호</th>
+	</tr>
+	<tr>
+		<td>이명호</td>
+		<td>영동</td>
+		<td>010-1234-1234</td>
+	</tr>
+	<tr>
+		<td>김윤환</td>
+		<td>궁동</td>
+		<td>010-2345-1234</td>
+	</tr>
+	<tr>
+		<td>이미현</td>
+		<td>탄방동</td>
+		<td>010-4444-4444</td>
+	</tr>
+
+</table>
+
+
+
+
+
+
+</body>
+</html>

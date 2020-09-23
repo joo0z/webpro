@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<style>
+	div{
+	 width: 200px;
+	 height: 100px;
+	 background: pink;	
+	}	
+</style>
+<script>
+function add() {
+	//입력한 값 가져오기 - get
+	xvalue = document.getElementById('x').value;
+	yvalue = document.getElementById('y').value;
+	
+	xval = parseInt(xvalue);
+	yval = parseInt(yvalue);
+	
+	xysum = xval + yval;
+	//
+	aa = document.getElementById('sum');
+	aa.value = xysum;
+	
+	document.getElementById('out').innerHTML = xysum;
+	
+}
+
+</script>
+</head>
+<body>
+<pre>
+ 두개의 값을 입력하고 확인버튼 클릭하면 
+ 덧셈을 한 후에 div와 input에 동시에 출력한다.
+ 
+ div에 출력 : div객체변수명.innerHTML =출력내용
+ input출력 : #sum객체 변수.value = 출력내용
+</pre>
+x : <input type="text" id="x"><br>
+y : <input type="text" id="y"><br>
+<input type="button" value="확인" onclick="add()">
+<br><br>
+결과 : <input type="text" id="sum"><br>
+<div id="out"></div>
+</body>
+</html>

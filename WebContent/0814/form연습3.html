@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<style>
+	table{
+		border: 1px solid red;
+	}
+	#td1{
+		text-align: center;
+		font-size: 1.5em;
+	}
+	select {
+	width: 200px;
+	height: 500px;
+	}
+	#txt{
+		margin-left: 150px
+	}
+	
+	
+</style>
+
+<script>
+
+	window.onload = function() {
+		form = document.selForm;
+		
+		form.data.focus();
+	}
+
+	function add() {
+		// 입력한 값 가져오기
+		datavalue = form.data.value;
+		
+		// 입력값이 없으면 추가하지 않는다
+		if (datavalue.trim().length > 0) {
+		// option태그 만들기 <option value="sdf">sdf</option>
+		// input태그 생성
+		opt = document.createElement("option");
+		opt.text = datavalue;
+		opt.value = datavalue; 
+		}
+		// left에 추가
+		form.left.appendChild(opt);
+		
+		// 지우기
+		form.data.value ="";
+		form.data.focus();
+		// value와 text속성
+	}
+	
+	
+	function toRight() { // 오른쪽으로 보내기
+		// 왼쪽에서 한개를 선택한다.
+		idx = form.left.selectedIndex;
+
+		// 선택한 항목이 없으면 메세지창을 띄운다
+		if (idx < 0) {
+			alert("항목을 선택하세요.");
+			return;  // 선택 항목이 없으면 함수를 끝낸다 
+		}
+
+		// 왼쪽(option)에서 선택한 번째의 값을 가져온다.
+		lvalue = form.left.options[idx].value;
+		// option태그 생성
+		opt = document.createElement('option');
+		// value와 text를 설정
+		opt.value = lvalue;
+		opt.text = lvalue;
+
+		// 오른쪽에 option태그를 추가
+		form.right.appendChild(opt);
+
+		// 왼쪽에서는 삭제한다. - 왼쪽에서 선택한 옵션
+		form.left.removeChild(form.left.options[idx])
+	}
+	
+	function toLeft() { // 왼쪽으로 보내기
+		idx = form.right.selectedIndex;
+
+		if (idx < 0) {
+			alert("항목을 선택하세요.");
+			return;  // 선택 항목이 없으면 함수를 끝낸다 
+		}
+
+		lvalue = form.right.options[idx].value;
+		opt = document.createElement('option');
+		opt.value = lvalue;
+		opt.text = lvalue;
+
+		form.left.appendChild(opt);
+
+		form.right.removeChild(form.right.options[idx])
+	}
+
+	function rightAll() {
+		// 왼쪽의 option의 개수를 얻어온다.
+		len = form.left.length;
+		// 개수만큼 반복한다.
+
+		for (i = 0; i < len; i++) {
+			// 왼쪽에서 차례대로 i번째의 값을 가져온다.
+			lvalue = form.left.options[i].value;
+			// option생성
+			opt = document.createElement('option');
+			// text와 value를 설정
+			opt.value = lvalue;
+			opt.text = lvalue;
+
+			// 오른쪽 select에 추가한다.
+			form.right.appendChild(opt);
+		}
+
+		// 개수만큼 지우기 반복
+		for (i = 0; i < len; i++) {
+			form.left.removeChild(form.left.options[0]);
+		}
+
+	}
+
+	function leftAll() {
+		len = form.right.length;
+
+		for (i = 0; i < len; i++) {
+			rvalue = form.right.options[i].value;
+			opt = document.createElement('option');
+			opt.value =rvalue;
+			opt.text = rvalue;
+
+			form.left.appendChild(opt);
+		}
+
+		for (i = 0; i < len; i++) {
+			form.right.removeChild(form.right.options[0]);
+		}
+	}
+</script>
+</head>
+<body>
+
+<div class="box">
+ <h3>form 문제3</h3>
+ <br>
+ <form name="selForm">
+ <table border="1">
+ 	<tr>
+ 		<td colspan="3" id="td1"><h2>select객체 예제</h2></td>
+ 	</tr>
+ 	<tr>
+ 		<td>
+ 			<select multiple="multiple" size="8" name="left">
+<!--  			<option value="사과">사과</option> -->
+<!--  			<option value="복숭아">복숭아</option> -->
+<!--  			<option value="바나나">바나나</option> -->
+<!--  			<option value="파인애플">파인애플</option> -->
+ 			</select>
+ 		</td>
+ 		<td>
+ 			<input type="button" value=">" onclick="toRight()"><br><br>
+ 			<input type="button" value=">>" onclick="rightAll()"><br><br>
+ 			<input type="button" value="<" onclick="toLeft()"><br><br>
+ 			<input type="button" value="<<" onclick="leftAll()"><br><br>
+ 		</td>
+ 		<td>
+ 			<select multiple="multiple" size="8" name="right">
+ 			</select>
+ 		</td>
+ 	</tr>
+ 	<tr>
+ 		<td colspan="3">
+ 			<input type="text" name="data" id="txt">
+ 			<input type="button" value="추가하기" onclick="add()">
+ 		</td>
+ 	</tr>
+ </table>
+ </form>
+ 
+ <br><br>
+</div>
+</body>
+</html>

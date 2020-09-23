@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<script>
+	function proc1() {
+		url = "http://http://localhost/webpro/0812/%EB%B0%B0%EA%B2%BD%EC%83%89%EB%B0%94%EA%BE%B8%EA%B8%B0.html"
+		
+		res = "href =" + location.href + "<br>";
+		res += "protocol = " + location.protocol + "<br>";
+		res += "host = " + location.host + "<br>";
+		res += "hostname = " + location.hostname + "<br>";
+		res += "port = " + location.port + "<br>";
+		res += "pathname = " + location.pathname + "<br>";
+		
+		document.getElementById('result1').innerHTML =res;
+	
+	
+	}
+	function proc2() {
+		// 이동할 페이지 지정
+		location.href = "test.jsp";
+	}
+	
+	function goPage() {
+		location.href = "test.jsp?id=a001";
+		
+	}
+	
+	function goPagePost() {
+		// form 검색 - id이용
+		document.getElementById("ff");
+		
+		//form 검색 - name 이용
+		document.getElementsByName("ff")[0];
+		document.ff.action = "testpost.jsp";
+		document.ff.method = "post";
+		document.ff.submit();
+	}
+	
+	function goReplace(url) {
+		location.replace(url);
+	}
+	
+	function goReload() {
+		// 문자열 배열 생성, 랜덤을 이용해서 문자열들을 하나씩 출력
+		str = ["이명호", "김유난", "이미현", "우송이", "나예린", "이명순"];
+		
+		// 랜덤 발생0~ str.길이 - str[랜덤]
+		rand = Math.floor(Math.random()*str.length);
+		res = str[rand];
+		
+		result = document.getElementById("result2")
+		// 출력 후 - #result2 - 글자색 빨강, 글자크기 확대
+		result.innerHTML = res;
+		result.style.color = 'red'; 
+		result.style.fontSize = '1.5em'; 
+		
+		
+		// 0.5초 경과 후 원래 페이지로 다시 로드한다.
+		setTimeout(function () {
+			location.reload();
+		}, 500);
+	}
+	
+</script>
+</head>
+<body>
+
+<div class="box">
+ <h3>1. url정보 얻기</h3>
+ href : 전체 url <br>
+ port : 80 기본 웹port로 생략 <br>
+ hostname : localhost <br>
+ host : hostname + port 정보 <br>
+ pathname : host부분 제외 <br>
+ protocol : http <br>
+ 
+ <br>
+ <input type="button" value="확인" onclick="proc1()">
+ <br><br>
+ <div id="result1"></div>
+</div>
+
+<div class="box">
+ <h3>2. location객체 이용</h3>
+ 자동으로 특정 페이지(test.jsp) 이동할 때 사용 <br>
+ <br>
+ <input type="button" value="페이지이동" onclick="proc2()">
+ <br><br>
+ a href 속성값으로 javascript함수를 호출하도록 설정한다.<br>
+ href="javascript:함수명();"<br>
+ a태그이용 <a href="javascript:goPage();">공지사항목록</a> <br>
+ <br>
+ -이벤트사용(get방식)
+ <input type="button" value="공지사항목록" onclick="goPage()"> <br>
+<br>
+ -이벤트사용(port방식) :
+ <form name= "ff" id="ff">
+ <input type="hidden" value="korea" name="id">
+ <input type="button" value="공지사항목록" onclick="goPagePost()"> 
+ </form> 
+ <br>
+ -새로운 문서로 대체 : .replace(URL) : 원래페이지로 돌아올 수 없다.<br>
+ <input type="button" value="공지사항목록" onclick="goReplace('test.jsp')"> <br>
+ <br>
+ -현재문서를 다시로드 :
+ <input type="button" value="페이지 재호출" onclick="goReload()"> <br>
+ <br>
+  <div id="result2"></div>
+</div>
+
+</body>
+</html>

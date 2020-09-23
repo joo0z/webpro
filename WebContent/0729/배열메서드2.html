@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<script>
+arr =  ["사과", "체리", "양파", "짜장면", "딸기", "사과", "복숭아", "키위", "망고", "사과"];
+	function proc1() {
+		// 시작위치입력
+		start = prompt("시작위치 입력");
+		// 끝위치입력
+		end = prompt("끝위치 입력");
+		
+		res = "원래배열" + arr + "<br>";
+		aa = arr.slice(start, end);
+		res += "추출한 요소slice(" + start + "," + end + ") : " + aa + "<br>";
+		
+		document.getElementById('result1').innerHTML = res;
+		
+	}
+	function proc2() {
+		
+		res = "원래 배열 : " + arr + "<br>";
+		
+		//2번째 위치에서 1개를 삭제하고 짜장면, 체리를 삽입한다.
+		arr.splice(2, 1, "수박", "체리");
+		
+		res += 'splice(2, 1, "짜장면", "체리") : ' + arr ;
+		document.getElementById('result2').innerHTML = res;
+	}
+	
+	function proc3() {
+		var arr = [1,2,3,4,5]
+		
+		res =  "arr : " + arr +"<br>";
+		// 똑같은 변수 이름이 있을때 전역변수는 window.전역변수명 으로 호출할 수 있다.
+		res += "window.arr : " + window.arr +"<br>";
+		
+		aa = arr.concat(window.arr);
+		res += "합친 배열 aa : " +  aa + "<br>";
+		
+		res += "arr.length " + arr.length + "<br>";
+		res += "window.arr.length " + window.arr.length + "<br>";
+		res += "합친 배열 aa.length " + aa.length + "<br>";
+		document.getElementById('result3').innerHTML = res;
+	}
+	
+	function proc4(){
+	      res = "arr : " + arr +"<br>"; 
+	      res += "aa.length : " + arr.length + "<br>";
+
+	      for(i =0; i<arr.length; i++){
+	         res+= arr[i] + "&nbsp;&nbsp;";
+	      }
+	      res += "<br>";
+	      
+	      aa = arr.join("/")
+	      res += "aa : " + aa + "<br>";
+	      res += "arr.join(/).length : " + aa.length +"<br>";
+	      
+	      for (i = 0; i < aa.length; i++) {
+	         res += aa[i] + "&nbsp;&nbsp;";
+	         
+	      }
+	      
+	      document.querySelector("#result4").innerHTML = res;
+	   }
+	
+	function proc5() {
+		res = "원래배열 : " + arr + "<br>";
+		
+		res += "arr.reverse() : " + arr.reverse();
+		document.getElementById('result5').innerHTML = res;
+	}
+	
+	function proc6() {
+		// 기본sort 1의자리수만 비교
+		arr = [ 234, 21, 150, 11, 55, 501];
+		
+		res = "원래 배열 :" + arr + "<br>";
+		
+		arr.sort();
+		//arr.sort() : 11,150,21,234,501,55
+		
+		res += "arr.sort() : " + arr + "<br>";
+		document.getElementById('result6').innerHTML = res;
+	}
+	function proc7() {
+		//오름차순
+		arr = [ 234, 21, 150, 11, 55, 501];
+	
+		res = "원래 배열 :" + arr + "<br>";
+		
+		arr.sort(function (a,b) {
+			// 연산결과가 양수값이 나오면 자리를 바꾼다.
+			return a - b;
+		})
+		res += "arr.sort() : " + arr + "<br>";
+		document.getElementById('result7').innerHTML = res;
+	}
+	
+	function proc8() {
+		//내림차순
+		arr = [ 234, 21, 150, 11, 55, 501];
+	
+		res = "원래 배열 :" + arr + "<br>";
+		
+		arr.sort(function (a,b) {
+			// 연산결과가 음수값이 나오면 자리를 바꾼다.
+			return b-a;
+		})
+		res += "arr.sort() : " + arr + "<br>";
+		document.getElementById('result8').innerHTML = res;
+	}
+	
+</script>
+</head>
+<body>
+
+<div class="box">
+ <h3>1. slice/splice</h3>
+ - slice(start, end) : start ~end-1 까지의 요소를 추출 <br>
+ - splice(index, n, a,b,c) : index위치에서 n개를 삭제하고 a,b,c요소를 추가<br>
+ <br>
+ <input type="button" value="slice" onclick="proc1()">
+ <input type="button" value="splice" onclick="proc2()">
+ <br><br>
+ <div id="result1"></div>
+ <div id="result2"></div>
+</div>
+
+<div class="box">
+ <h3>2. concat/join/reverse</h3>
+ - a.concat(b,c) : 여러개의 배열 요소를 한개의 배열로 합친다.<br>
+ - a.join() : 한개의 배열요소를 하나의 문자열로 변환한다.<br>
+ - a.reverse() : a배열의 순서를 뒤집는다.<br>
+ 
+ <br>
+ <input type="button" value="concat" onclick="proc3()">
+ <input type="button" value="join" onclick="proc4()">
+ <input type="button" value="reverse" onclick="proc5()">
+ <br><br>
+ <div id="result3"></div>
+ <div id="result4"></div>
+ <div id="result5"></div>
+</div>
+
+<div class="box">
+ <h3>3. sort</h3>
+ arr = [ 234, 21, 150, 11, 55, 501] <br>
+ - a.sort() : 자리수 크기별로 - 11 21 55 150 234 501 /  <br> 
+ 	오름차순 sort : 11 150 21 234 501 > 자리수로 1의자리부터 비교해서  나온다.<br> 
+ 	내림차순 sort : 501 234 150 55 21 11
+ <br>
+ <input type="button" value="sort" onclick="proc6()">
+ <input type="button" value="sort_as" onclick="proc7()">
+ <input type="button" value="sort_des" onclick="proc8()">
+ <br><br>
+ <div id="result6"></div>
+ <div id="result7"></div>
+ <div id="result8"></div>
+</div>
+</body>
+</html>

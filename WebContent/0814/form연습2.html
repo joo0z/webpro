@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<script>
+	function proc1(){
+		
+		// name을 이용해서 접근한다.
+		
+		vname = document.ff.name.value
+		vgander = document.ff.gender.value
+		
+		vhabby = document.ff.habby;
+		res = "이름 : " + vname + "\n";
+		res += "성별 : " + vgander + "\n";
+		res += "취미 : " ;
+		// 여러개 배열에 넣어
+		for (i = 0; i < vhabby.length; i++) {
+			if(vhabby[i].checked) {
+				res += vhabby[i].value + " ";
+			} 
+		}
+		document.ff.area.value = res;
+		
+	}
+</script>
+</head>
+<body>
+
+<div class="box">
+ <h3>1. form문제2</h3>
+ <br>
+ <br><br>
+ <form name="ff">
+ 	이름 : <input type="text" value="이름" name="name"><br>
+ 	성별 : <input type="radio" name="gender" value="남" checked="checked">남자
+ 	여자 <input type="radio" name="gender" value="성별"><br>
+ 	
+ 	취미 : <input type="checkbox" name="habby" value="여행">여행
+ 		 <input type="checkbox" name="habby" value="독서">독서
+ 		 <input type="checkbox" name="habby" value="영화감상">영화감상
+ 		 <input type="checkbox" name="habby" value="바둑">바둑
+ 		 <input type="checkbox" name="habby" value="장기">장기
+ 		 <input type="checkbox" name="habby" value="낙시">낙시 <br>
+ 		<br>
+ 	<input type="button" value="결과출력" onclick="proc1()">
+ 	<br><br>
+ 	<textarea name="area" rows="10" cols="60"></textarea>
+ 	
+ </form>
+</div>
+</body>
+</html>

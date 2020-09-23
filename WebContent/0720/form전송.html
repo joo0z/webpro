@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	body {
+/* 		background: yellow; */
+	}
+</style>
+
+<script>
+	//이벤트(onclick)에 의한 실행 --동적으로 실행
+	function proc(){
+	dob = document.querySelector('#bcolor');  //input검색
+	col = dob.value;	//선택한 색상
+	document.body.style.backgroundColor = col; 
+	}
+</script>
+
+</head>
+<body>
+<h2> 배경색 선택</h2>
+<form>
+	선택된 color값으로 배경색을 변경하기<br>
+	javaScript를 이용하여 선택값을 얻고, 동적으로도 변경 가능하다.<br>
+	javaScript에서 input 태그를 접근하기위해<br>
+	document.querySelector('#bcolor') <br>
+	<input type="color" id="bcolor">
+	<input type="button" value="확인" onclick="proc()">
+</form>
+<h2>서버 페이지 : test.jsp로 데이터 전송(get)</h2>
+	<form action="test.jsp" method="get">
+	  아이디 : <input type="text" value="kkk" name="id"> <br>
+	  이름	 : <input type="text" value="홍길동" name="name"> <br>
+	  비밀번호 : <input type="text" value="password" name="pass"><br>
+	  <input type="submit" value="전송get방식">
+	</form>
+	<hr color='black'>
+	
+<h2>서버 페이지 : test.jsp로 데이터 전송(post)</h2>
+	<form action="test.jsp" method="post">
+	  아이디 : <input type="text" value="kkk" name="id"> <br>
+	  이름	 : <input type="text" value="홍길동" name="name"> <br>
+	  비밀번호 : <input type="text" value="password" name="pass"><br>
+	  <input type="submit" value="전송post방식">
+	</form>
+	<hr color="black">
+	<form action="test.jsp" method="post">
+	  아이디 : <input type="text" value="kkk" name="id"> <br>
+	  이름	 : <input type="text" value="홍길동" name="name"> <br>
+	  비밀번호 : <input type="password" value="password" name="pass"><br>
+	  전화번호  : <input type="tel" name="tel" ><br>
+	  이메일 : <input type="email" name="email"><br>
+	  생일  : <input type="date" name="birth">
+	  <input type="submit" value="전송post방식">
+	</form>
+	
+</body>
+</html>
+

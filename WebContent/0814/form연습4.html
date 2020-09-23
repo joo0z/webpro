@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<style>
+table {
+	margin-left: 200px;
+}
+#tr1{
+	height: 45px;
+}
+</style>
+<script>
+
+	window.onload = function() {
+		form = document.selForm;
+		form.data.focus();
+	}
+
+	function dan() {
+		dv = form.data.value;
+
+		if (dv.trim().length > 0) {
+				res = dv + "단" + "\n\n";
+			for (i = 1; i < 10; i++) {
+				res += dv + "*" + i + "=" + dv*i + "\n";
+			}
+			document.querySelector('#txt').innerHTML = res;
+		}
+
+	}
+</script>
+</head>
+<body>
+ <br>
+<form action="" name="selForm">
+ <table>
+ 	<tr id="tr1">
+ 		<td>
+ 			<input type="text" name="data">
+ 		</td>
+ 		<td>단</td>
+ 		<td>
+ 			<input type="button" value="출력" onclick="dan()">
+ 		</td>
+ 	</tr>
+ 	<tr >
+ 		<td colspan="3">
+ 			<textarea id="txt" name="txt" rows="30" cols="20"></textarea>
+ 		</td>
+ 	</tr>
+ 
+ </table>
+ </form>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<style>
+	div{
+		width: 50%;
+		height: 100px;
+		background: pink;	
+	}
+</style>
+<script>
+	function proc1() {
+		var now = new Date();
+		document.write(now + "<br>"); 	
+	}
+	function proc2() {
+		var now = new Date();
+		const vout = document.getElementById('out')
+		vout.style.fontSize = '1.2em';
+		vout.innerHTML = now;
+	}
+</script>
+
+</head>
+<body>
+<pre>
+확인버튼 클릭하면proc1()함수가 호출된다.
+proc1()에서 Date객체 생성 후 ducument.write()를 이용해 브라우져에 출력
+출력하기전에 이미 만들어져 있는 document문서는(실행된 화면 ) 사라진다.
+</pre>
+<input id="btn1" type="button" value="확인" onclick="proc1()">
+<br>
+<pre>
+ 출력버튼 클릭하면 proc2()함수가 호출
+ proc1()함수에서 Date객체 생성 후  div에 출력한다.
+ div에 출력하기 위해 => div에 접근
+ 여러개여도 첫번째 1개만 가져옴
+ document.querySelector('div')
+ document.querySelector('#out')
+ 
+ document.getElementById('out')
+ document.getElementsByTagName('div')[0] > [몇번째인지]
+ 
+ 출력 : div객체변수.innerHTML = 출력내용;
+</pre>
+<input id="btn2" type="button" value="출력" onclick="proc2()">
+<br>
+<div id="out">
+
+</div>
+
+</body>
+</html>

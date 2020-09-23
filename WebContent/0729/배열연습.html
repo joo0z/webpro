@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<script>
+
+	res = " ";
+	function proc1() {
+		person = [];
+		while (true) {
+			input = prompt("이름을 입력하세요");
+			if (input == "" || input == null ){break;}
+				person.push(input);
+		}
+			res += "출력  :" + person +"<br>";
+		document.getElementById('result1').innerHTML = res;
+	}
+</script>
+</head>
+<body>
+
+<div class="box">
+ <h3>1. 이름입력</h3>
+ prompt를 이용해 이름을 입력받는다.<br>
+ 입력받은 이름을 배열에 저장한다.<br>
+ 입력시 공백이거나 취소 버튼 클릭 시 종료한다.<br>
+ 
+ 
+ <br>
+ <input type="button" value="확인" onclick="proc1()">
+ <br><br>
+ <div id="result1"></div>
+</div>
+</body>
+</html>

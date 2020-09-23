@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<style>
+	pre{
+		padding: 10px;
+	}
+	p{
+		font-size: 1.5em;
+	}
+	p[class=pp]{
+		color : blue;
+	}
+	span[class=pp]{
+		font-size: 2.0em;
+		font-weight: bold;
+	}
+	strong{
+		font-size: 1.2em;
+	}
+	p[id=p4]{
+		background-color: #f1d1e1;
+	}
+	p[title=무궁화1]{
+		 border: 3px solid red;
+	}
+	p[title]{
+		font-style: italic;
+		color: red;
+	}
+	p[id]{
+		text-align: center;
+		text-shadow: 20px 10px 10px gray;
+	}
+</style>
+</head>
+<body>
+<div>
+<pre>
+ 작성팁
+ 속성관련선택
+	.pp 
+	p.pp 
+	<strong>p[class=pp]</strong>  속성을 쓸 때는 [여기에]
+	span.pp
+	<strong>span[class=pp]</strong> 
+   #p4
+   <strong>p[id=p4]</strong> 	background-color: #f1d1e1;
+   <strong>p[title=무궁화1]</strong>	border: 3px solid red;
+   <strong>p[title]</strong> font-style: italic;
+							 color: red;
+   <strong>p[id]</strong> text-align: center;
+   
+   글자의 그림자 주기
+   text-shadow: x좌표 ,y좌표 ,선명도(숫자가 커질수록 흐려짐) ,그림자색;
+   ex)text-shadow: 20px 10px 10px gray;
+</pre>
+	<p title="무궁화1" id="p1">무궁화 꽃이 피었습니다.</p>
+	<p class="pp">무궁화 꽃이 피었습니다.</p>
+	<p title="무궁화2" class="pp">무궁화 꽃이 피었습니다.</p>
+	<p id="p4">무궁화 꽃이 피었습니다.</p>
+	<p class="pp2">무궁화 꽃이 피었습니다.</p>
+	
+	<span class="pp">사과</span>
+	<span>복숭아</span>
+	<span>체리</span>
+</div>
+</body>
+</html>

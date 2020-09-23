@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<style>
+table {
+	margin-left: 200px;
+}
+#tr1{
+	height: 45px;
+}
+h2{
+	text-align: center;
+}
+div { 
+	border : 1px solid black;
+	width: 200px; 
+	height: 400px
+}
+</style>
+<script>
+	function dan() {
+		idx = selForm.sel.value;
+		
+		res = idx + "단" + "<br><br>";
+		for (i = 1; i < 10; i++) {
+			res += idx + "*" + i + "=" + idx*i +"<br>";
+		}
+		document.querySelector('#dd').innerHTML = res;
+		
+	}
+</script>
+</head>
+<body>
+ <br>
+<form name="selForm">
+ <table>
+ 	<tr id="tr1">
+ 		<td>
+ 			<select name="sel">
+ 				<option name="value" value="1">&nbsp;1단&nbsp;</option>
+ 				<option name="value" value="2">&nbsp;2단&nbsp;</option>
+ 				<option name="value" value="3">&nbsp;3단&nbsp;</option>
+ 				<option name="value" value="4">&nbsp;4단&nbsp;</option>
+ 				<option name="value" value="5">&nbsp;5단&nbsp;</option>
+ 				<option name="value" value="6">&nbsp;6단&nbsp;</option>
+ 				<option name="value" value="7">&nbsp;7단&nbsp;</option>
+ 				<option name="value" value="8">&nbsp;8단&nbsp;</option>
+ 				<option name="value" value="9">&nbsp;9단&nbsp;</option>
+ 			</select>
+ 		</td>
+ 		<td>
+ 			<input type="button" value="&nbsp;출&nbsp;력&nbsp;" onclick="dan()">
+ 		</td>
+ 	</tr>
+ 	<tr>
+ 		<td colspan="3">
+ 				<h2>결과&nbsp;출력</h2>
+ 			<div id="dd">
+ 			</div>
+ 		</td>
+ 	</tr>
+ 
+ </table>
+ </form>
+</body>
+</html>

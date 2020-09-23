@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<style>
+	*{
+		color : gray;
+	}
+	fieldset{
+		width: 60%;
+	}
+	label {
+		display : inline-block;
+		width: 70px;
+		height: 20px;
+		padding: 2px;
+	}
+	div{
+		display : inline-block;
+		border: 3px solid blue; 
+		box-sizing: content-box;
+		width : 60%;
+ 		overflow : auto;
+		padding: 20px;
+		height: auto;
+	}
+	pre{
+		background : yellow;
+	}
+	
+</style>
+
+</head>
+<body>
+<pre style="background : green">
+작성팁
+fieldset : 입력항목들의 그룹핑
+legend : fieldset의 제목
+label  : 일반문자, 문자의 길이를 같게 하기 위해 사용
+	- label 요소가 inline요소이기 때문에 
+	style에서 display : inline-block; 지정 후 가로세로 길이를 맞춰준다.
+</pre>
+	<form>
+		<fieldset>
+		<legend>인적사항 제목</legend>
+		 	<label>이름 </label>
+		 	<input type="text"> <br>
+		 	
+		 	<label>전화번호</label>
+		 	<input type="text"><br>
+		</fieldset>
+		
+		<fieldset>
+		<legend>경력사항</legend>
+		 <label> 이메일 </label> 
+		 <input type="text"><br>
+		 
+		 <label>생일 </label>
+		  <input type="date"><br>
+		</fieldset>
+	</form>
+	
+	<hr color="yellow">
+	<h2>&nbsp;&nbsp;이메일 전송화면</h2>
+	<div>
+	<form>
+		<label>이름 </label>
+		<input type="text"> <br>
+		
+		<label>이메일 </label>
+		<input type="text"> <br>
+		
+		내용 <br> 
+   		<textarea name="area" rows="10" cols="60"></textarea>
+  		 <br>
+  		 <input type="submit" name="전송">
+  		 <input type="reset" name="초기화">
+	</form>
+	</div>
+	<hr color="yellow">
+	<h2>&nbsp;&nbsp;&nbsp;회원 가입 화면</h2>
+	<div>
+	<form>
+		<label>이름 </label>
+		<input type="text"> <br>
+	
+		<label>주소</label>
+		<input type="text"> <br>
+	
+		<label>이메일</label>
+		<input type="email"> <br>
+		
+		<input type="radio" value="Male" name="gender">Male<br>
+		<input type="radio" value="Female" name="gender">Female<br>
+		
+		<input type="submit"value="Send">
+  		<input type="reset" value="원래대로">
+	</form>
+	</div>
+	
+	
+	
+</body>
+</html>

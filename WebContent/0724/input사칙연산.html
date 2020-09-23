@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<style>
+div{
+		width: 50%;
+		height: 100px;
+		background: pink;	
+	}	
+</style>
+<script> 
+	
+	function calc() {
+		let x = prompt("1번째 정수를 입력하세요");
+		let i = prompt("연산자를 입력하세요");
+		let y = prompt("2번째 정수를 입력하세요");
+
+		x = parseInt(x);
+		y = parseInt(y);
+		
+// 		if (i == '+') {
+// 			sum = x + y;
+// 		document.getElementById('out').innerHTML = sum;
+// 		}else if (i == '-') {
+// 			sum = x - y;
+// 		document.getElementById('out').innerHTML = sum;
+// 		}else if (i == '*') {
+// 			sum = x * y;
+// 		document.getElementById('out').innerHTML = sum;
+// 		}else if (i == '/') {
+// 			sum = x / y;
+// 		document.getElementById('out').innerHTML = sum;
+// 		}
+		
+		switch (i) {
+		case '+':
+			sum = x + y;
+			break;
+		case '-':
+			sum = x - y;
+			break;
+		case '*':
+			sum = x * y;
+			break;
+		case '/':
+			sum = x / y;
+			break;
+		default:
+			break;
+		}
+		
+		
+		
+		res = x + i + y + "=" + sum;
+		document.getElementById('out').innerHTML = res;
+		
+	}
+
+</script>
+</head>
+<body>
+ <pre>
+  두개의 수를 prompt로 입력받는다.
+  한개의 연산자를 입력받는다.
+  
+  연산자를 비교해서 (if/ switch) 연산을 수행한다.
+ 연산 수행한 결과값을 div에 출력한다.
+ </pre>
+ <input type="button" onclick="calc()" value="확인">
+ <br><br>
+ <div id="out"></div>
+</body>
+</html>

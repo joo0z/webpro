@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<script>
+	function proc1() {
+		today = new Date();
+		birday = new Date(1994,1, 12);
+		
+		times = today.getTime() - birday.getTime();
+		
+		res = "생일 : " + birday +"<br>";
+		res += "오늘날짜 : " + today +"<br>";
+		res += "살아온 millisec : " + times + "밀리초"+ "<br>";
+		res += "살아온  초 : " + times/1000 + "초"+ "<br>";
+		res += "살아온  분 : " + Math.floor(times/1000/60) + "분"+ "<br>";
+		res += "살아온  시 : " + Math.floor(times/1000/60/60) + "시"+ "<br>";
+		res += "살아온  일 : " + Math.floor(times/1000/60/60/24) + "일"+ "<br>";
+		res += "살아온  년 : " + Math.floor(times/1000/60/60/24/365) + "년"+ "<br>";
+		
+		
+		document.getElementById('result1').innerHTML = res;
+		
+	}
+	
+	function proc2() {
+		// 오늘 날짜 생성
+		today = new Date();
+		
+		// 오늘의 millisec + 100일의 millisec
+		tday = today.getTime();
+		x = (1000*60*60*24)+100;
+		nday = tday + x;
+		// 새로운 date를 생성한다.
+		dday = new Date(nday); 
+		
+		document.getElementById('result2').innerHTML = dday;
+		
+	}
+</script>
+</head>
+<body>
+
+<div class="box">
+ <h3>1. 경과시간 구하기</h3>
+ - 태어난 날로 부터 현재까지 날 수 구하기<br>
+ - birday = new Date("태어난날");<br>
+ - today = new Date() : 현재오늘날짜;<br>
+ <br>
+ <input type="button" value="확인" onclick="proc1()">
+ <br><br>
+ <div id="result1"></div>
+</div>
+
+<div class="box">
+ <h3>2. 경과시간</h3>
+ - 오늘부터 1일일때 100일 후 구하기<br>
+ - today = new Date()<br>
+ - 100일의 millesec 값 구하기<br>
+ - today.getTime() + 환산값<br>
+ - resultdate = new <br>
+ <br>
+ <input type="button" value="확인" onclick="proc2()">
+ <br><br>
+ <div id="result2"></div>
+</div>
+
+<div class="box">
+ <h3>3. 경과시간</h3>
+ - 크리스마스까지 몇일 남았나<br>
+ <br>
+ <input type="button" value="확인" onclick="proc3()">
+ <br><br>
+ <div id="result3"></div>
+</div>
+</body>
+</html>

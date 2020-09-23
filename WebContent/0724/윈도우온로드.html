@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<style>
+div{
+		width: 50%;
+		height: 100px;
+		background: pink;	
+	}	
+</style>
+<script>
+window.onload = function name() {
+	
+	var now = new Date();
+	div = document.getElementsByTagName('div')[0];
+	div.style.color ='red';
+	div.innerHTML = now;
+
+}
+</script>
+</head>
+<body>
+<pre>
+ 실행하자마자 날짜 생성해서 div에 출력한다.
+ body보다 위쪽에서 코딩한 script를 수행시 
+ body태그 안의 요소에 접근할 수 없다. 
+ 그럴때 window.onload = function name() {} > 윈도우를 실행하고 출력하라는 블럭안에 넣어준다.
+ body아의요소들로 실행해 document객체를 만들고 window브라우져에 실행완료 후에 
+ script를 실행하도록 한다.
+</pre>
+<br>
+<div></div>
+</body>
+</html>

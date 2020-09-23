@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<style>
+table#tab2 {
+		border: 3px solid red;
+		border-collapse : collapse; 
+		margin : 10px; 
+	}
+	th{
+		height : 100px;
+		width : 50px;
+	}
+	td {
+		width : 200px;
+		height : 100px;
+		text-align: center;
+	}
+	#tab1{
+		border: 3px solid blue;
+		border-collapse : collapse; 
+		margin : 5px; 
+	}
+	#tr1{
+		width : 50px;
+		height : 20px;
+		margin : 5px;
+	}
+	#tab1 #infor{
+		width : 500px;
+	}
+	#tab1 .infor{
+		text-align: lift;
+	}
+	
+</style>
+</head>
+<body>
+ <table id="tab2" border="1">
+ <tr>
+ 	<td colspan="2"></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+ </tr>
+ <tr>
+ 	<td colspan="4"></td>
+	<td colspan="2"></td>
+	
+ </tr>
+ <tr>
+ 	<td colspan="4"></td>
+	<td colspan="2" rowspan="2"></td>
+	
+ </tr>
+ <tr>
+ 	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+ </tr>
+ 
+ </table>
+ 
+ 
+ <table id="tab1" border="1">
+ 	 <tr id="tr1">
+ 		<th colspan="5">평생교육</th>
+ 	 </tr>
+ 	 <tr>
+ 		<td>강좌이름</td>
+		<td>강의자</td>
+		<td id="td1">소개</td>
+		<td>강좌코드</td>
+		<td>실습비</td>
+ 	 </tr>
+ 	 <tr>
+ 		<td>html</td>
+		<td>박주영</td>
+		<td id="info" class="infor">강의소개</td>
+		<td>pjy</td>
+		<td>100,000원</td>
+ 	 </tr>
+ 	 <tr>
+ 		<td>java</td>
+		<td>이명호</td>
+		<td class="infor">강의소개</td>
+		<td>lmh</td>
+		<td>1000원</td>
+ 	 </tr>
+ 	 <tr>
+ 		<td>highjava</td>
+		<td>김윤환</td>
+		<td class="infor">강의소개</td>
+		<td>kyh</td>
+		<td>10000원</td>
+ 	 </tr>
+ </table>
+ 
+ 
+ 
+
+</body>
+</html>

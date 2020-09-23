@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+.box {
+	border-radius: 20px;
+}
+
+header {
+	height: 100px;
+	background: #fee0eb;
+	clear: both;
+	text-align: center;
+	padding: 10px;
+}
+
+ul#menu {
+	border: 2px solid blue;
+	padding: 20px;
+	border-left: none;
+	border-right: none;
+	text-align: center;
+}
+.mm {
+	display: inline;
+	margin: 20px;
+	padding: 10px;
+}
+#right{
+	background : #dbdbff;
+	height : 300px;
+	width : 260px;
+	float: right;
+}
+.cc{
+	display: inline;
+}
+#shopcart{
+	width : 250px;
+	height : 90px;
+	float: right;
+	text-align: left;
+}
+#login{
+	width : 260px;
+	height : 200px;
+	float: right;
+}
+
+</style>
+</head>
+<body>
+
+<header class="box">
+        <h1>
+            <img arc=“ ”>
+            <a href="">Web Shop</a>
+       </h1>
+  </header>
+  <nav class="box">
+        <ul id="menu">
+            <li class="mm"><a href="index.html">Home</a></li>
+            <li class="mm"><a href="index.html">About Us</a></li>
+            <li class="mm"><a href="index.html">News</a></li>
+            <li class="mm"><a href="index.html">My Account</a></li>
+            <li class="mm"><a href="index.html">Contacts</a></li>
+        </ul>
+    </nav>
+    
+   <aside class="box" id="right">
+        <div id="shopcart">
+        <p>Shopping Cart</p>
+       	 현재 쇼핑카트에 물품이 없습니다.<br>
+       	<a href="">쇼핑카트보기</a>
+        </div>
+        	<div id="login">
+            <h4>Log In</h4>
+            <form action="#">
+            	 아이디 : <input type="text" name="id"> <br>
+            	 비밀번호 : <input type="password" value="password" name="pass"><br>
+		   		<input type="submit" value="전송">
+				<input type="button" value="확인" onclick="alert('로그인')">
+            </form>
+           <li class="cc"><a href="">회원가입</a></li>
+           <li class="cc"><a href="">비밀번호분실</a></li>
+        </div>
+    </aside>
+     <section class="box" id="main">
+        <article id="article1">
+            <iframe src=“computer.html” name=“ifr”> 
+            </iframe>
+        </article>
+    </section>
+   
+</body>
+</html>
